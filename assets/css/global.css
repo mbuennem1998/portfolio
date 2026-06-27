@@ -121,4 +121,9 @@ section {
     .corner {
         display: none;
     }
+    .holo-panel {
+        background: rgba(0, 255, 255, 0.08); /* softer hologram */
+        opacity: 0.65; /* lower opacity on mobile */
+        backdrop-filter: blur(3px); /* keeps the cyber look */
+    }
 }
