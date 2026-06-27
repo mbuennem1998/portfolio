@@ -1,0 +1,22 @@
+/* ===== ANIMATIONS ===== */
+
+@keyframes holoFloat {
+    from { transform: translateY(1px); }
+    to { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px #00eaff55, 0 0 20px #00eaff33; }
+    50% { box-shadow: 0 0 20px #00eaffaa, 0 0 40px #00eaff66; }
+    100% { box-shadow: 0 0 10px #00eaff55, 0 0 20px #00eaff33; }
+}
+
+@keyframes gridMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(40px); }
+}
+
+@keyframes holoGlow {
+    from { box-shadow: 0 0 10px #00eaff55; }
+    to { box-shadow: 0 0 25px #00eaffaa; }
+}

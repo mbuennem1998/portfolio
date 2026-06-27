@@ -1,0 +1,239 @@
+/* ===== CYBER AESTHETIC THEME ===== */
+
+/* Background */
+body {
+    background: #0a0f1f;
+    color: #d0eaff;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Subtle animated grid */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    animation: gridMove 20s linear infinite;
+}
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 183px; /* adjust until corners are fully visible */
+    }
+}
+@keyframes holoFloat {
+    from { transform: translateY(1px); }
+    to { transform: translateY(-8px); }
+}
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px #00eaff55, 0 0 20px #00eaff33;
+    }
+    50% {
+        box-shadow: 0 0 20px #00eaffaa, 0 0 40px #00eaff66;
+    }
+    100% {
+        box-shadow: 0 0 10px #00eaff55, 0 0 20px #00eaff33;
+    }
+}
+
+@keyframes gridMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(40px); }
+}
+@keyframes holoGlow {
+    from { box-shadow: 0 0 10px #00eaff55; }
+    to { box-shadow: 0 0 25px #00eaffaa; }
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #00eaff;
+    box-shadow: 0 0 15px #00eaff55;
+}
+
+.navbar-brand, .nav-link {
+    color: #00eaff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: #7df9ff !important;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #7df9ff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.cyber-card {
+    position: relative;
+    display: flex;                /* enables flexbox centering */
+    align-items: center;          /* vertical center */
+    justify-content: center;      /* horizontal center */
+    background: rgba(0, 20, 40, 0.85);
+    border: 1px solid #00eaff;
+    box-shadow: 0 0 15px #00eaff55;
+    color: #d0eaff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 120px;
+    overflow: visible;
+}
+
+
+.holo-panel {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;          /* prevents overflow */
+    white-space: normal;       /* allows wrapping */
+    word-wrap: break-word;     /* forces long words to break */
+
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid #00eaff;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    color: #00eaff;
+    text-shadow: 0 0 8px #00eaff;
+    box-shadow: 0 0 20px #00eaff55;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+.cyber-card:hover .holo-panel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+    animation: holoGlow 1.5s infinite alternate;
+}
+/* Section background for better contrast */
+section {
+    background: radial-gradient(circle at top left, #001020, #000814);
+    padding: 80px 0;
+}
+
+/* Glowing heading */
+h1 {
+    color: #00eaff;
+    text-shadow: 0 0 15px #00eaff, 0 0 30px #0077ff;
+}
+
+/* Buttons */
+.btn-cyber {
+    background: transparent;
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: 0.3s;
+    text-shadow: 0 0 8px #00eaff;
+    box-shadow: 0 0 12px #00eaff55;
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+.btn-cyber:hover {
+    background: #00eaff;
+    color: #000;
+    box-shadow: 0 0 15px #00eaff;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+    text-align: center;
+}
+/* Header */
+.holo-header .name {
+    font-size: 3rem;
+    color: #00eaff;
+    text-shadow: 0 0 15px #00eaff, 0 0 30px #0077ff;
+    margin-bottom: 10px;
+}
+
+.holo-header .roles {
+    font-size: 1.1rem;
+    color: #7df9ff;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+/* Bio */
+.holo-body .bio {
+    margin: 25px 0;
+    color: #d0eaff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Actions */
+.holo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+/* Corner Frames */
+.corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #00eaff;
+    opacity: 0.8;
+    box-shadow: 0 0 10px #00eaffaa;
+}
+
+/* Top Left */
+.corner.tl {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* Top Right */
+.corner.tr {
+    top: 12px;
+    right: 12px;
+    border-left: none;
+    border-bottom: none;
+}
+
+/* Bottom Left */
+.corner.bl {
+    bottom: 12px;
+    left: 12px;
+    border-right: none;
+    border-top: none;
+}
+
+/* Bottom Right */
+.corner.br {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+}

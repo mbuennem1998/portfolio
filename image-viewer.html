@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Viewer</title>
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <img src="" id="viewer">
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("viewer").src = params.get("img");
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,386 @@
+/* ===== COMPONENTS ===== */
+
+/* Cyber Card */
+.cyber-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 20, 40, 0.85);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 15px var(--bg-glow);
+    color: #d0eaff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 120px;
+    overflow: visible;
+}
+
+/* Hologram Panel */
+.holo-panel {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid var(--accent);
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+    box-shadow: 0 0 20px var(--bg-glow);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+
+.cyber-card:hover .holo-panel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+    animation: holoGlow 1.5s infinite alternate;
+}
+
+/* Buttons */
+.btn-cyber {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    padding: 12px 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: 0.3s;
+    text-shadow: 0 0 8px var(--accent);
+    box-shadow: 0 0 12px var(--bg-glow);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.btn-cyber:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* Hologram Card Header */
+.holo-header .name {
+    font-size: 3rem;
+    color: var(--accent);
+    text-shadow:
+        0 0 15px var(--accent),
+        0 0 30px var(--accent-soft);
+    margin-bottom: 10px;
+}
+
+.holo-header .roles {
+    font-size: 1.1rem;
+    color: var(--text-glow);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+/* Bio */
+.holo-body .bio {
+    margin: 25px 0;
+    color: #d0eaff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Actions */
+.holo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Corner Frames */
+.corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--accent);
+    opacity: 0.8;
+    box-shadow: 0 0 10px var(--accent-soft);
+}
+
+.corner.tl {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+}
+.corner.tr {
+    top: 12px;
+    right: 12px;
+    border-left: none;
+    border-bottom: none;
+}
+.corner.bl,
+.corner.br {
+    position: fixed;
+    bottom: 0;
+    
+}
+.corner.bl {
+    left: 0;
+}
+
+.corner.br {
+    right: 0;
+}
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.about-photo img {
+    width: 260px;
+    height: 260px;
+    border: 2px solid var(--accent);
+    object-position: top;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow:
+        0 0 20px var(--accent),
+        0 0 40px var(--accent-soft),
+        inset 0 0 20px var(--bg-glow);
+    filter: brightness(1.15) contrast(1.1);
+    animation: holoFloat 3s ease-in-out infinite alternate;
+}
+
+.about-text {
+    flex: 1;
+}
+.carousel-item,
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* semi‑opaque */
+    border-radius: 12px;
+}
+
+.carousel-item iframe,
+.carousel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide only the slides that are truly inactive */
+.carousel-item:not(.active):not(.carousel-item-next):not(.carousel-item-prev) {
+    display: none;
+}
+
+/* Uniform logo size */
+.carousel-logo {
+    width: 300px;
+    height: 788px;
+    object-fit: contain;
+    padding: 10px;
+    filter: drop-shadow(0 0 12px var(--accent));
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.carousel-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--accent-soft));
+}
+
+#logoCarousel {
+    background: rgba(199, 0, 172, 0.63); /* opaque panel */
+    border-radius: 12px;
+    padding: 20px;
+
+    /* pink glow behind the panel */
+    box-shadow:
+        0 0 20px var(--accent),
+        0 0 40px var(--accent-soft);
+}
+
+.carousel-slot {
+    width: 300px;
+    height: 788px;
+    object-fit: contain;
+    padding: 10px;
+    filter: drop-shadow(0 0 12px var(--accent));
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.carousel-slot:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--accent-soft));
+}
+
+#slotCarousel {
+    background: rgba(199, 0, 172, 0.63); /* opaque panel */
+    border-radius: 12px;
+    padding: 20px;
+
+    /* pink glow behind the panel */
+    box-shadow:
+        0 0 20px var(--accent),
+        0 0 40px var(--accent-soft);
+}
+
+.carousel-slot2 {
+    width: 300px;
+    height: 788px;
+    object-fit: contain;
+    padding: 10px;
+    filter: drop-shadow(0 0 12px var(--accent));
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.carousel-slot2:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--accent-soft));
+}
+
+#slot2Carousel {
+    background: rgba(199, 0, 172, 0.63); /* opaque panel */
+    border-radius: 12px;
+    padding: 20px;
+
+    /* pink glow behind the panel */
+    box-shadow:
+        0 0 20px var(--accent),
+        0 0 40px var(--accent-soft);
+}
+:root {
+    --accent: #cfd8e3;
+    --accent-soft: #e6eef7;
+    --text-glow: 0 0 10px #cfd8e3, 0 0 20px #e6eef7;
+    --bg-glow: 0 0 16px #cfd8e3, 0 0 32px #e6eef7;
+}
+
+.commission-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    /* OPAQUE BACKGROUND */
+    background: rgba(0, 0, 0, 0.85); /* darker, easier to read */
+
+    border-radius: 12px;
+    box-shadow: var(--bg-glow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(6px); /* optional: adds a frosted cyber look */
+}
+/* Dropdown options */
+.commission-form select option {
+    background: rgba(0, 0, 0, 0.95); /* dark dropdown list */
+    color: var(--accent); /* silver text */
+}
+
+.commission-form h2 {
+    color: var(--accent);
+    text-shadow: var(--text-glow);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.commission-form label {
+    color: var(--accent);
+    text-shadow: var(--text-glow);
+    font-size: 0.9rem;
+}
+
+.commission-form input,
+.commission-form select,
+.commission-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    outline: none;
+    box-shadow: 0 0 8px rgba(207, 216, 227, 0.2);
+    transition: 0.3s ease;
+}
+
+.commission-form input:focus,
+.commission-form select:focus,
+.commission-form textarea:focus {
+    box-shadow: var(--bg-glow);
+}
+
+.commission-form button {
+    margin-top: 10px;
+    padding: 12px;
+    background: var(--accent);
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--bg-glow);
+    transition: 0.3s ease;
+}
+
+.commission-form button:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 24px var(--accent),
+        0 0 48px var(--accent-soft);
+}
+.video-card {
+    background: #0d0d0d;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 15px var(--accent-soft);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px var(--accent);
+}
+
+.video-title {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--accent);
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--accent-soft);
+}
+
+.enlarged-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}

@@ -1,0 +1,124 @@
+/* ===== GLOBAL STYLES + COLOR SYSTEM ===== */
+
+/* Default (Home) Colors */
+:root {
+    --accent: #00eaff;
+    --accent-soft: #0077ff;
+    --text-glow: #00eaff;
+    --bg-glow: #00eaff33;
+}
+
+/* HOME — Cyan / Blue */
+.home-page {
+    --accent: #00eaff;
+    --accent-soft: #0077ff;
+    --text-glow: #00eaff;
+    --bg-glow: #00eaff33;
+}
+
+/* ABOUT — Teal / Green */
+.about-page {
+    --accent: #00ffbf;
+    --accent-soft: #00d48f;
+    --text-glow: #00ffbf;
+    --bg-glow: #00ffbf33;
+}
+
+/* SKILLS — Purple / Blue */
+.skills-page {
+    --accent: #9d4dff;
+    --accent-soft: #5f2cff;
+    --text-glow: #b57aff;
+    --bg-glow: #9d4dff33;
+}
+
+/* PROJECTS — Magenta / Pink */
+.projects-page {
+    --accent: #ff2ec4;
+    --accent-soft: #ff6ad5;
+    --text-glow: #ff4ed4;
+    --bg-glow: #ff2ec433;
+}
+
+/* CONTACT — Blue / White */
+.contact-page {
+    --accent: #66ccff;
+    --accent-soft: #ffffff;
+    --text-glow: #ffffff;
+    --bg-glow: #66ccff33;
+}
+/* commission — Blue / White */
+.commission-page {
+    --accent: #cfd8e3;
+    --accent-soft: #e6eef7;
+    --text-glow: #ffd28a;
+    --bg-glow: #cfd8e3 ;
+   
+}
+/* Background */
+body {
+    background: #0a0f1f;
+    color: #d0eaff;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Subtle animated grid */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--bg-glow) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-glow) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    animation: gridMove 20s linear infinite;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--accent);
+    box-shadow: 0 0 15px var(--bg-glow);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--accent) !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--text-glow) !important;
+    text-shadow: 0 0 8px var(--accent);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--text-glow);
+    text-shadow: 0 0 10px var(--accent);
+}
+
+/* Section background */
+section {
+    background: radial-gradient(circle at top left, #001020, #000814);
+    padding: 80px 0;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .corner {
+        display: none;
+    }
+}
