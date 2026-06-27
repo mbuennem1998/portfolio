@@ -2,6 +2,10 @@
 
 /* Cyber Card */
 .cyber-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
     position: relative;
     display: flex;
     align-items: center;
